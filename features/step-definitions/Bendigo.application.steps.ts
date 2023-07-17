@@ -8,6 +8,10 @@ const pages = {
     login: LoginPage
 }
 
+/*
+            The below step will call first and open the browser and maximise the window 
+    */
+
 Given(/^Launch the Bendigo Bank application URL/, async () => {
     loginPage.open()
     await browser.maximizeWindow()
@@ -21,6 +25,11 @@ When(/^After Launch I can see the Bendigo Bank URL Launched/, async () => {
 Then(/^Submit the form with all details/, async () => {
 
     await loginPage.clickOnBanking_Button_ClickOn_Credit_Cards();    
+
+
+    /*
+            The below code will launch the child window and do operations on that
+    */
 
    await browser.url('https://www.bendigobank.com.au/personal/credit-cards/check-my-eligibility/?ccproduct=bright')
     // get the Session id of the Parent
@@ -47,6 +56,10 @@ Then(/^Submit the form with all details/, async () => {
             // expect(Text).toEqual("Getting Started"); 
             // console.log("Text Displayed-------------------"+Text);
             //break;
+
+/*
+            The below methods will call from loginPage one by one.
+    */
 
             await loginPage.productDetails("10000");
             await loginPage.applicationDetails();

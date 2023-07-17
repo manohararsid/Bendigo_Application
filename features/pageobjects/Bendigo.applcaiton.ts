@@ -7,9 +7,14 @@ import Page from './page';
  */
 class LoginPage extends Page {
        /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
+         * a method to encapsule automation code to interact with the page
+          */
+
+
+       /*
+       The below method will click on Credit card button under Banking Option 
+       also it will click apply on bright credit card 
+       */
     public async clickOnBanking_Button_ClickOn_Credit_Cards() {
         //await browser.pause(5000)
         await browser.$("//*[@id=\"BendigoBankHeaderConfig-16378-re-mega-menu-desc-menu-row-menu-item-banking\"]").click();
@@ -35,7 +40,9 @@ class LoginPage extends Page {
         // await browser.$("//*[@id=\"Button-237631\"]").click()
         // browser.pause(2000)
     }
-
+        /*
+            The below method will fill the details in product details page and click on continue 
+    */
 
     public async productDetails(credit_limit:string) {
         var pagetitle = await browser.getTitle();
@@ -50,7 +57,9 @@ class LoginPage extends Page {
         await browser.$("//*[@name=\"contBtn\"][contains(text(),'Continue')]").click()
        // await browser.pause(6000)
     }
-
+/*
+            The below method will fill the details in application details page and click on continue 
+    */
     public async applicationDetails() {
         var pagetitle = await browser.getTitle();
         console.log("pagetitle========"+pagetitle);
@@ -70,6 +79,10 @@ class LoginPage extends Page {
         //await browser.pause(6000)
     }
 
+    /*
+            The below method will fill the details in time_eligibility details page and click on continue 
+    */
+
     public async time_Elegibility() {
         var pagetitle = await browser.getTitle();
         console.log("pagetitle========"+pagetitle);
@@ -86,6 +99,10 @@ class LoginPage extends Page {
         await browser.$("//*[@name=\"contBtn\"][contains(text(),'Continue')]").click();
         //await browser.pause(2000)
     }
+
+    /*
+            The below method will fill the details in branch details page and click on continue 
+    */
     public async branch_Details() {
         var pagetitle = await browser.getTitle();
         console.log("pagetitle========"+pagetitle);
@@ -104,6 +121,9 @@ class LoginPage extends Page {
         //await browser.pause(6000)
     }
 
+    /*
+            The below method will fill the details in financial details page and click on continue 
+    */
     public async financial_Details(amount:string) {
         var pagetitle = await browser.getTitle();
         console.log("pagetitle========"+pagetitle);
@@ -130,7 +150,9 @@ class LoginPage extends Page {
         //await browser.pause(6000)
     }
 
-
+/*
+            The below method will fill the details in expenses page.
+    */
     public async expenses(expenses_amount:string) {
         var pagetitle = await browser.getTitle();
         console.log("pagetitle========"+pagetitle);
@@ -143,14 +165,16 @@ class LoginPage extends Page {
         drp_expense_frequency.selectByIndex(3);
         //await browser.pause(6000)
     }
-
+ /*
+            The below method will cancel the application
+    */
     public async cancel_application_yes() {
         await browser.$("//*[@name=\"cancelBtn\"][contains(text(),'Cancel')]").click()
         //await browser.pause(6000)
         await browser.$("//*[@type=\"button\"][contains(text(),'Yes')]").click();
         //await browser.pause(6000)
-                   //var appNumber = await browser.$("//*[@id=\"appNumber\"]).getText();
-               //  console.log("Your application" + appNumber + "has been cancelled");  
+                   var appNumber = await browser.$("//*[@id=\"appNumber\"]).getText();
+                 console.log("Your application" + appNumber + "has been cancelled");  
     }
     /**
      * 
