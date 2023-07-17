@@ -136,9 +136,10 @@ class LoginPage extends Page {
         //await browser.pause(6000)
         //await browser.$("//*[@name=\"occupationSearch\"]").waitForClickable()
         //await browser.$("//*[@name=\"occupationSearch\"]").addValue("Social Professionals (general)");
-        await browser.$("//*[@name=\"occupationSearch\"]").scrollIntoView();
-        await browser.$("//*[@name=\"occupationSearch\"]").setValue("Professional");
-        await browser.$("//*[@id=\"typeahead-830-1994-option-1\"]/a/strong").click();
+        //await browser.$("//*[@name=\"occupationSearch\"]").scrollIntoView();
+        await browser.$("//input[@name=\"occupationSearch\"]").setValue("Social Professionals (general)");
+        
+      //  await browser.$("//li[@id=\"typeahead-860-7084-option-1\"]").click();
         //await browser.pause(6000)
         await browser.$("//*[@name=\"incomeAmount\"]").setValue(amount)
         //await browser.pause(6000)
@@ -173,8 +174,8 @@ class LoginPage extends Page {
         //await browser.pause(6000)
         await browser.$("//*[@type=\"button\"][contains(text(),'Yes')]").click();
         //await browser.pause(6000)
-                   var appNumber = await browser.$("//*[@id=\"appNumber\"]).getText();
-                 console.log("Your application" + appNumber + "has been cancelled");  
+                 //  var appNumber = await browser.$("//*[@id=\"appNumber\"]).getText();
+                 //console.log("Your application" + appNumber + "has been cancelled");  
     }
     /**
      * 
