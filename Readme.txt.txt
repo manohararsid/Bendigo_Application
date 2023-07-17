@@ -12,3 +12,5 @@ and spec and feature files are defined to run.
 7.In the Bendigo_applcation.ts file I mentioned each functional page as one method. 
 
 Finally after cloning the project - command to run the feature is npx wdio .\wdio.conf.ts
+
+Note : recording is available  for the quick reference
